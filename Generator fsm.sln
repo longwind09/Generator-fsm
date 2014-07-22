@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Generator fsm", "Generator fsm.vcproj", "{FF55B23E-A7D0-4D83-955A-9004FC6EE7AE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF55B23E-A7D0-4D83-955A-9004FC6EE7AE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FF55B23E-A7D0-4D83-955A-9004FC6EE7AE}.Debug|Win32.Build.0 = Debug|Win32
+		{FF55B23E-A7D0-4D83-955A-9004FC6EE7AE}.Release|Win32.ActiveCfg = Release|Win32
+		{FF55B23E-A7D0-4D83-955A-9004FC6EE7AE}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
