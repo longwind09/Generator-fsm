@@ -44,6 +44,8 @@ struct fsm_generator
 		LOAD_FSM = 4,
 		WRITE_CPP = 5,
 		WRITE_FILE = 6,
+		ADD_TRANSITION = 7,
+		DELETE_TRANSITION = 8,
 		EXIT = 0,
 	};
 
@@ -65,6 +67,39 @@ struct fsm_generator
 	vector<state> fsm;
 	map<string,int> state_names;
 
+
+	void add_transition(int state)
+	{
+
+		string choice;
+		transition t;
+
+		restart:
+		
+		printf("Add a transition to another state\n");
+		printf("If you enter -1 and nothing else, you can set a default transition for this state\n");
+		printf("If you enter -2 and nothing else, you exit this place\n");
+		printf("A default transition is the automatic fallthrough of the state. Most of the time a default transition"
+			   "will Loop to itself\n");
+
+		cin >> choice;
+
+		if (choice == "-2") return;
+
+		//C++11 has the at function, better
+		if (state_names.find(choice) == state_names.end() ) {
+			printf("This state does not exist\n");
+			goto restart;
+		}
+
+		t.name = choice;
+		t.destination = state_names[choice];
+		t.source = state;
+
+		fsm[state].transitions.push_back(t);
+
+	}
+
 	void add_state(void)
 	{
 
@@ -84,6 +119,17 @@ struct fsm_generator
 		//call add transition
 	}
 
+	void view_fsm()
+	{
+		for (int i=0; i < fsm.size(); i++) {
+			cout << fsm[i].i << "." << fsm[i].name << "\n"; 
+			cout << "Transitions :\n";
+		}
+
+
+	}
+
+
 int go(void)
 {
 
@@ -100,6 +146,20 @@ int go(void)
 		case ADD_NEW_STATE:
 			add_state();
 			break;
+
+		case VIEW_FSM:
+			view_fsm();
+			break;
+
+		case ADD_TRANSITION:
+			printf("Enter state to modify : ");
+			cin >> choice;
+			add_transition(choice);
+			break;
+
+
+		case EXIT:
+			exit(1);
 
 		}
 		
