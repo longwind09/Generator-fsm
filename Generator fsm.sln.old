@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Generator fsm", "Generator fsm.vcxproj", "{FF55B23E-A7D0-4D83-955A-9004FC6EE7AE}"
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Generator fsm", "Generator fsm.vcproj", "{FF55B23E-A7D0-4D83-955A-9004FC6EE7AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
